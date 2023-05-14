@@ -12,7 +12,7 @@ import pro.sky.calculatorwithtests.service.CalculatorService;
 @SpringBootTest
 public class CalculatorServiceTest {
 
-  CalculatorService calculatorService = new CalculatorService();
+  private final CalculatorService calculatorService = new CalculatorService();
   @Test
   public void testPlus() {
     Integer actual = calculatorService.sum(5, 5);

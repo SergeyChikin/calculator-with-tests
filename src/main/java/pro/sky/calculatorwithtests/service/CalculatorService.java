@@ -21,7 +21,7 @@ public class CalculatorService {
            if (num2 == 0 ) {
            throw new InvalidValueException("НА НОЛЬ ДЕЛИТЬ НЕЛЬЗЯ!!!");
         }
-        return num1 / num2;
+        return (double) num1 / num2;
     }
 
 }

@@ -25,21 +25,33 @@ public class CalculatorController {
 
     @GetMapping(path = "/plus")
     public String plus(@RequestParam(required = false) String num1, @RequestParam(required = false) String num2) {
+        if (num1 == null || num2 == null || num1.isEmpty() || num2.isEmpty()) {
+            return "<b>ОШИБКА! ВВЕДИТЕ 2 ПАРАМЕТРА!</b>";
+        }
         return num1 + " + " + num2 + " = " + calculatorService.sum(Integer.parseInt(num1), Integer.parseInt(num2));
     }
 
     @GetMapping(path = "/minus")
     public String minus(@RequestParam(required = false) String num1, @RequestParam(required = false) String num2) {
+        if (num1 == null || num2 == null || num1.isEmpty() || num2.isEmpty()) {
+            return "<b>ОШИБКА! ВВЕДИТЕ 2 ПАРАМЕТРА!</b>";
+        }
         return num1 + " - " + num2 + " = " + calculatorService.minus(Integer.parseInt(num1), Integer.parseInt(num2));
     }
 
     @GetMapping(path = "/multiply")
     public String multiply(@RequestParam(required = false) String num1, @RequestParam(required = false) String num2) {
+        if (num1 == null || num2 == null || num1.isEmpty() || num2.isEmpty()) {
+            return "<b>ОШИБКА! ВВЕДИТЕ 2 ПАРАМЕТРА!</b>";
+        }
         return num1 + " * " + num2 + " = " + calculatorService.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
     }
 
     @GetMapping(path = "/divide")
     public String divide(@RequestParam(required = false) String num1, @RequestParam(required = false) String num2) {
+        if (num1 == null || num2 == null || num1.isEmpty() || num2.isEmpty()) {
+            return "<b>ОШИБКА! ВВЕДИТЕ 2 ПАРАМЕТРА!</b>";
+        }
         return num1 + " / " + num2 + " = " + calculatorService.divide(Integer.parseInt(num1), Integer.parseInt(num2));
     }
 }
